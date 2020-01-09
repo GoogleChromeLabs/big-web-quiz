@@ -1,12 +1,17 @@
 # The Big Web Quiz
 
+This exists on:
+
+- Github https://github.com/GoogleChromeLabs/big-web-quiz
+- Glitch https://glitch.com/edit/#!/bwq
+
 ## What's this all about?
 
 At Chrome Dev Summit in 2019 we polled the audience to discover their favourite web feature of 2019 TODO-add-video-link. Here's the stuff we (hastily) built to make it all happen. You can use it to run your own live polls, present slides, and run contests.
 
-## Getting started
+## Getting started on Glitch
 
-First, remix this project to create your own copy, and fill in the following in your project's `.env` file:
+First, remix [this project](https://glitch.com/edit/#!/bwq) to create your own copy, and fill in the following in your project's `.env` file:
 
 - `ADMIN_PASSWORD` - This is the password you'll use to access the admin panel. Make this something difficult to guess, and don't like, write it on your forehead.
 - `COOKIE_SECRET` - Make this something unique. You don't need to remember it, so a quick mash of the keyboard is enough.
