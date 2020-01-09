@@ -1,0 +1,302 @@
+/**
+* Copyright 2019 Google Inc. All Rights Reserved.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*     http://www.apache.org/licenses/LICENSE-2.0
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+@font-face {
+  font-family: 'app-font';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://cdn.glitch.com/b7996c5b-5a36-4f1b-84db-52a31d101dfc%2Fnormal.woff2?v=1577974248786')
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'app-font';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://cdn.glitch.com/b7996c5b-5a36-4f1b-84db-52a31d101dfc%2Fbold.woff2?v=1577974248594')
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background-image: radial-gradient(
+      circle farthest-corner,
+      rgb(255, 255, 255, 0.4) 50%,
+      rgb(255, 255, 255, 0.4) 52%,
+      rgb(254, 254, 254, 0.4) 55%,
+      rgb(253, 253, 253, 0.4) 57%,
+      rgb(252, 252, 252, 0.4) 60%,
+      rgb(249, 249, 249, 0.4) 67%,
+      rgb(245, 245, 245, 0.4) 72%,
+      rgb(242, 242, 242, 0.4) 73%,
+      rgb(223, 223, 223, 0.4) 76%,
+      rgb(185, 185, 185, 0.4) 82%,
+      rgb(0, 0, 0, 0.4) 100%
+    ),
+    linear-gradient(to bottom, #fff, #f3f3f3);
+  font-family: app-font, sans-serif;
+  color: black;
+  background-blend-mode: multiply, normal;
+  background-size: 113%, 100%;
+  background-position: center;
+  --side-margin: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: radial-gradient(
+        circle farthest-corner,
+        rgb(255, 255, 255, 0.4) 50%,
+        rgb(255, 255, 255, 0.4) 52%,
+        rgb(254, 254, 254, 0.4) 55%,
+        rgb(253, 253, 253, 0.4) 57%,
+        rgb(252, 252, 252, 0.4) 60%,
+        rgb(249, 249, 249, 0.4) 67%,
+        rgb(245, 245, 245, 0.4) 72%,
+        rgb(242, 242, 242, 0.4) 73%,
+        rgb(223, 223, 223, 0.4) 76%,
+        rgb(185, 185, 185, 0.4) 82%,
+        rgb(0, 0, 0, 0.4) 100%
+      ),
+      linear-gradient(to bottom, #3f3f3f, #000000);
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow-x: hidden;
+}
+
+.main-ui {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+
+.main-header {
+  background: #525252;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.22);
+  padding: 1rem var(--side-margin);
+  align-items: center;
+}
+
+.main-content-container {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.main-content {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  will-change: transform;
+}
+
+.user-image {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  border: 2px solid #fff;
+}
+
+.unbutton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+.log-out-button {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+
+.site-title {
+  text-align: center;
+  padding: 3.4rem var(--side-margin) 0;
+
+  & h1 {
+    color: #9aa0a6;
+    margin: 0 0 0.1em;
+  }
+
+  & p {
+    color: #707070;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.main-action-area {
+  display: grid;
+  align-items: center;
+  padding: 3.4rem var(--side-margin);
+}
+
+.waiting {
+  color: #1365ce;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.1;
+  font-size: 7vw;
+
+  @media (min-width: 635px) {
+    font-size: 2.8rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #b6d6ff;
+  }
+}
+
+.transition-grid {
+  display: grid;
+  align-items: center;
+  perspective: 1000px;
+
+  & > * {
+    grid-area: 1 / 1;
+    will-change: transform;
+  }
+}
+
+.vote-buttons {
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+  padding: 0 45px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 740px;
+  perspective: 1000px;
+}
+
+.log-in-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 0 45px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 740px;
+}
+
+.vote-button {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: 0.7em;
+  min-height: 4em;
+  font-size: 7vw;
+  font-weight: bold;
+  border-radius: 0.4rem;
+  background-image: linear-gradient(180deg, var(--color-from), var(--color-to));
+  box-shadow: 0 0 8px 3px rgba(225, 236, 255, 0.91),
+    0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 11px 16px 0 rgba(0, 0, 0, 0.15);
+  will-change: transform;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition-property: transform, opacity;
+  width: 100%;
+  --move-by: 150px;
+
+  @media (min-width: 460px) {
+    font-size: 2rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5),
+      0 11px 16px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus {
+    outline: none;
+    &::before {
+      animation: flash 0.3s linear;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10px;
+    right: 0px;
+    bottom: 50%;
+    transform: rotate(-4.8deg);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.32) 13%,
+      rgba(255, 255, 255, 0.09)
+    );
+    background-repeat: no-repeat;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(#fff, transparent);
+    opacity: 0.0001;
+    will-change: opacity;
+  }
+}
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+}
+
+.vote-button-selected {
+  transform: translateZ(var(--move-by));
+}
+
+.vote-button-unselected {
+  transform: translateZ(calc(var(--move-by) * -1));
+  opacity: 0.25;
+}
+
+.vote-or {
+  text-transform: uppercase;
+  text-align: center;
+  color: #707070;
+  font-size: 7vw;
+  font-weight: bold;
+  padding: 0.9em 0;
+
+  @media (min-width: 460px) {
+    font-size: 2rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #b7b7b7;
+  }
+}
