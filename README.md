@@ -9,6 +9,8 @@ This exists on:
 
 At Chrome Dev Summit in 2019 we polled the audience to discover their favourite web feature of 2019 TODO-add-video-link. Here's the stuff we (hastily) built to make it all happen. You can use it to run your own live polls, present slides, and run contests.
 
+**Glitch limits projects to 4000 requests per hour** which will limit the number of people you can have taking part to around 200-500. If you need more, you'll need to set up your own server.
+
 ## Getting started on Glitch
 
 First, remix [this project](https://glitch.com/edit/#!/bwq) to create your own copy, and fill in the following in your project's `.env` file:
@@ -45,7 +47,7 @@ And with that, you've created your first vote! No, nothing happens yet. To make 
 - `Staging` - The vote appears in the admin page, but it doesn't appear on the big screen, or to users.
 - `Introducing` - The vote labels appear on the big screen, but voting hasn't started yet.
 - `Voting` - Users can now vote. The big screen shows the live results.
-- `Results` - User can no longer vote. The big screen shows the final results.
+- `Results` - Users can no longer vote. The big screen shows the final results.
 - `Clear vote` - Remove the vote. It's removed from the big screen and admin page.
 
 Cookies are used to 'prevent' folks from voting multiple times. 'Prevent' is in quotes because it's pretty ineffective. Folks can just use multiple browsers, profiles, or voting bots to get around it. If you want extra protection, you'll need to make users log in. More on that later.
