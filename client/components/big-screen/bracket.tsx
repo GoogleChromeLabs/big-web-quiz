@@ -132,22 +132,21 @@ export default class Bracket extends Component<Props> {
 
     // Get the bounds of everything we want to focus on
     const boundingRect = toZoomTo
-      .slice(1)
-      .reduce<ClientRect>((rect: ClientRect, path: string) => {
-        const pathRect = getBoundsForPath(path);
-        const x1 = Math.min(rect.left, pathRect.left);
-        const y1 = Math.min(rect.top, pathRect.top);
+      .map(path => getBoundsForPath(path))
+      .reduce((totalBounds: ClientRect, pathRect: ClientRect) => {
+        const x1 = Math.min(totalBounds.left, pathRect.left);
+        const y1 = Math.min(totalBounds.top, pathRect.top);
         const x2 = Math.max(
-          rect.left + rect.width,
+          totalBounds.left + totalBounds.width,
           pathRect.left + pathRect.width,
         );
         const y2 = Math.max(
-          rect.top + rect.height,
+          totalBounds.top + totalBounds.height,
           pathRect.top + pathRect.height,
         );
 
         return new DOMRect(x1, y1, x2 - x1, y2 - y1);
-      }, getBoundsForPath(toZoomTo[0]));
+      });
 
     // How much would we need to scale it by to fit it in the container?
     const perspective = 1000;
