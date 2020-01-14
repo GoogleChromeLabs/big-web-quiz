@@ -59,7 +59,6 @@ const statePath = join(
 const keysToSave: Array<keyof State> = ['champions', 'topics', 'results'];
 
 export let state: State = {
-  // Need to cast here because TS isn't smart enough.
   champions: {},
   topics: {},
   results: null,
