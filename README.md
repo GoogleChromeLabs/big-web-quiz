@@ -111,7 +111,7 @@ Clicking "Set as winner" will make this item the winner of this stage. You can c
 
 ## Better logins
 
-If you want, you can use Google Sign-In for admins and even regular users. This is more secure for admins, but it also prevents most vote cheating, as each vote is tied to a Google login. Of course, if someone has 100 Google logins, they can still vote 100 times, but meh, well done them.
+If you want, you can use Google Sign-In for admins and even regular users. This is more secure for admins, but it also prevents most vote cheating, as each vote is tied to a Google login. Of course, if someone has 100 Google logins, they can still vote 100 times, but meh, well done them. If you don't require users to log in, they can [pretty easily write a voting bot](https://medium.com/@jsoverson/how-i-hacked-the-vote-at-chrome-dev-summit-ba6cea7a468e).
 
 By the way, if you're a government agent and you're thinking of using this system for an election, please stop now. Stop everything. Go away.
 
