@@ -45,7 +45,9 @@ export function broadcast(message: Object) {
   const messageStr = JSON.stringify(message);
 
   for (const client of wss.clients) {
-    client.send(messageStr);
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(messageStr);
+    }
   }
 }
 

@@ -99,7 +99,9 @@ function broadcastState(interestingState: Partial<State>): void {
   const message = JSON.stringify({ state: interestingState });
 
   for (const client of wss.clients) {
-    client.send(message);
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(message);
+    }
   }
 }
 
