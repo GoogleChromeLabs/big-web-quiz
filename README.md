@@ -7,7 +7,7 @@ This exists on:
 
 ## What's this all about?
 
-At Chrome Dev Summit in 2019 we polled the audience to discover their favourite web feature of 2019 TODO-add-video-link. Here's the stuff we (hastily) built to make it all happen. You can use it to run your own live polls, present slides, and run contests.
+At Chrome Dev Summit in 2019 [we polled the audience to discover their favourite web feature of 2019](https://www.youtube.com/watch?v=RE4QlXdou8c). Here's the stuff we (hastily) built to make it all happen. You can use it to run your own live polls, present slides, and run contests.
 
 **Glitch limits projects to 4000 requests per hour** which will limit the number of people you can have taking part to around 200-500. If you need more, you'll need to set up your own server.
 
