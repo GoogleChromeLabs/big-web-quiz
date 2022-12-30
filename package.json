@@ -40,7 +40,7 @@
     "express-async-handler": "^1.1.4",
     "express-session": "^1.17.0",
     "express-static-gzip": "^2.0.5",
-    "fast-json-patch": "^3.0.0-1",
+    "fast-json-patch": "^3.1.1",
     "glob": "^7.1.6",
     "google-auth-library": "^5.7.0",
     "immer": "^5.1.0",
