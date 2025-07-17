@@ -38,7 +38,7 @@
     "@types/ws": "^6.0.4",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
-    "express-session": "^1.17.0",
+    "express-session": "^1.18.2",
     "express-static-gzip": "^2.0.5",
     "fast-json-patch": "^3.0.0-1",
     "glob": "^7.1.6",
