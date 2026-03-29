@@ -42,7 +42,7 @@
     "express-static-gzip": "^2.0.5",
     "fast-json-patch": "^3.0.0-1",
     "glob": "^7.1.6",
-    "google-auth-library": "^5.7.0",
+    "google-auth-library": "^10.6.2",
     "immer": "^5.1.0",
     "preact": "^10.1.1",
     "preact-render-to-string": "^5.1.3",
